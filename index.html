@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+
+	<title>FFV | VS GILGAMESH!!</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<!-- sns -->
+
+	<meta id="tw-text" property="tw:description" content="" />
+
+	<meta property="og:title" content="FFV | VS GILGAMESH!!">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="http://www.kmifa.sakura.ne.jp/gzKadai/jyanken/">
+	<meta property="og:image" content="http://www.kmifa.sakura.ne.jp/gzKadai/jyanken/imgs/giruFinish.png">
+
+	<!-- css -->
+
+	<link rel="stylesheet" href="styles/reset.css">
+	<link rel="stylesheet" href="styles/main.css">
+
+	<!-- js -->
+
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="scripts/p5.min.js"></script>
+	<script src="scripts/stage.js"></script>
+    <!--<script src="scripts/index.js"></script>-->
+	<script src="scripts/sound.js"></script>
+	<script src="scripts/timer.js"></script>
+	<script src="scripts/scene.js"></script>
+
+</head>
+
+<body>
+
+<div id="wrap">
+	<div id="start-scene" class="scene">
+	<div class="sirudora">
+		<img src="imgs/sirudora.png" alt="">
+	</div>
+		<div class="title">
+			<h1>FINAL FANTASY V</h1>
+		</div>
+		<div class="title-reverse">
+			<p>FINAL FANTASY V</p>
+		</div>
+		<div class="start-menu">
+			<p>START</p>
+		</div>
+	</div>
+	<div class="scene" id="battle-scene">
+	<div id="battle-background"></div>
+		<p class="text-voice">
+			
+		</p>
+		<div id="img-enemy">
+			<img src="imgs/giru.gif" alt="">
+		</div>
+		<div id="img-friend">
+			<img src="imgs/batsu.png" alt="">
+		</div>
+		<div class="st-menu">
+			<div class="st-enemy st-common">
+				<p class="name">ギルガメッシュ</p>
+				<p class="hp">HP <span></span></p>
+			</div>
+			<div class="st-friend st-common">
+				<p class="name">バッツ</p>
+				<p class="hp">HP <span></span></p>
+			</div>
+		</div>
+		<div class="command">
+			<p id="goo">たたかう(グー)</p>
+			<p id="tyoki">まほう(チョキ)</p>
+			<p id="pa">しょうかん(パー)</p>
+		</div>
+
+		<div class="wall"></div>
+
+		<div class="lose">
+				<p id="yes">はい</p>
+				<p id="no">ずるをする</p>
+		</div>	
+	</div>
+	<div class="scene" id="finish-scene">
+		<div class="finish-img">
+			<img src="imgs/giruFinish.png" alt="">
+		</div>
+		<p class="thanks">
+			THANK YOU<br>FOR PLAYING
+		</p>
+	</div>
+</div>
+
+
+
+</body>
+
+</html>
