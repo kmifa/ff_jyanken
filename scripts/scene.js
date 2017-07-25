@@ -1,6 +1,10 @@
 var FFV = FFV || {};
 
-// SCENEコンストラクタ
+/**
+ * 初期シーン
+ * @constructor
+ * @param {number} [hash] - デバッグ用
+ */
 FFV.SCENE = function(hash){
     this.First = $("#start-scene");
     this.tit = $(".title").find("h1");
@@ -22,7 +26,9 @@ FFV.SCENE = function(hash){
     }
 };
 
-
+/**
+ * cssの初期化
+ */
 FFV.SCENE.prototype.initialize = function(){
     this.First.css("opacity",0);
     this.sirudora.css("opacity",0);
@@ -31,7 +37,9 @@ FFV.SCENE.prototype.initialize = function(){
     this.tit_re.css("top",-this.titHeight);
 };
 
-
+/**
+ * 画面アニメーション
+ */
 FFV.SCENE.prototype.showView = function(){
 
     var self = this;
@@ -77,6 +85,9 @@ FFV.SCENE.prototype.showView = function(){
         });
 };
 
+/**
+ * Startを押した時のclickイベント
+ */
 FFV.SCENE.prototype.hideView = function(){
 
     var self = this;
@@ -87,6 +98,9 @@ FFV.SCENE.prototype.hideView = function(){
 
 };
 
+/**
+ * 画面遷移する関数
+ */
 FFV.SCENE.prototype.toBattle = function(){
     this.soundBattleStart = new FFV.SOUND('battle-start.wav');
     var self = this;
@@ -111,6 +125,10 @@ FFV.SCENE.prototype.toBattle = function(){
     self.First.fadeOut(3000);
 };
 
+/**
+ * バトルシーン
+ * @constructor
+ */
 FFV.BATTLE = function(){
 
     this.textArea = $(".text-voice");
@@ -133,6 +151,9 @@ FFV.BATTLE = function(){
     this.showView();
 };
 
+/**
+ * cssの初期化
+ */
 FFV.BATTLE.prototype.initialize = function(){
     this.enemy.css("left",this.enemy_out);
     this.command.hide();
@@ -141,6 +162,9 @@ FFV.BATTLE.prototype.initialize = function(){
     this.enemyHP.text(this.enemyLife);
 };
 
+/**
+ * 画面アニメーション
+ */
 FFV.BATTLE.prototype.showView = function(){
     var self = this;
     var d = new $.Deferred();
@@ -163,6 +187,9 @@ FFV.BATTLE.prototype.showView = function(){
         });
 };
 
+/**
+ * プレイヤーのコマンドをクリックした時
+ */
 FFV.BATTLE.prototype.onClickCommand = function(){
     var self = this;
 
@@ -179,10 +206,16 @@ FFV.BATTLE.prototype.onClickCommand = function(){
     });
 };
 
+/**
+ * あいこの時に実効する関数
+ */
 FFV.BATTLE.prototype.drawEvent = function(){
 
 };
 
+/**
+ * 勝った時に実行する関数
+ */
 FFV.BATTLE.prototype.winEvent = function(){
     this.enemyLife -= 1;
     this.enemyHP.text(this.enemyLife);
@@ -217,6 +250,9 @@ FFV.BATTLE.prototype.winEvent = function(){
     }
 };
 
+/**
+ * 負けた時に実行する関数
+ */
 FFV.BATTLE.prototype.loseEvent = function(){
     var self = this;
     this.yourLife -= 1;
@@ -226,11 +262,19 @@ FFV.BATTLE.prototype.loseEvent = function(){
     }
 };
 
+/**
+ * 関数
+ * @returns {number} - 1~3の値を返す
+ */
 FFV.BATTLE.prototype.randomReturn = function(){
     var random = Math.floor(Math.random()* 3);
     return random;
 };
 
+/**
+ * 勝った時のシーン
+ * @constructor
+ */
 FFV.FINISH = function(){
 
     this.second = $("#battle-scene");
@@ -242,11 +286,16 @@ FFV.FINISH = function(){
     this.showView();
 };
 
+/**
+ * cssの初期化
+ */
 FFV.FINISH.prototype.initialize = function(){
     this.finish.hide();
-
 };
 
+/**
+ * 画面アニメーション
+ */
 FFV.FINISH.prototype.showView = function(){
     var self = this;
     var d = new $.Deferred();
@@ -270,5 +319,5 @@ FFV.FINISH.prototype.showView = function(){
 };
 
 $(function(){
-    var obj = new FFV.SCENE(1);
+    var AppInit = new FFV.SCENE(1);
 });
