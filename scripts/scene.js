@@ -194,7 +194,8 @@ FFV.BATTLE.prototype.onClickCommand = function(){
     var self = this;
 
     this.hand.on("click",function(){
-        var hisHand = self.randomReturn();
+        var hisHand = kmifaLib.ranInRange(3);
+        console.log(hisHand);
 
         if(hisHand === 0){
             self.drawEvent();
@@ -264,7 +265,7 @@ FFV.BATTLE.prototype.loseEvent = function(){
 
 /**
  * 関数
- * @returns {number} - 1~3の値を返す
+ * @returns {number} - 0~2の値を返す
  */
 FFV.BATTLE.prototype.randomReturn = function(){
     var random = Math.floor(Math.random()* 3);
